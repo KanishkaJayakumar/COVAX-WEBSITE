@@ -1,0 +1,147 @@
+<!-- location.component.html -->
+
+<!-- <div *ngFor="let item of filteredItems">
+    <div class="vaccination-center">
+      <div class="center-info">
+        <img [src]="item.imageUrl" alt="{{ item.name }} Image">
+        <h3>{{ item.name }}</h3>
+        <p><strong>Location:</strong> {{ item.location }}</p>
+        <p><strong>Work Hours:</strong> {{ item.workhours }}</p>
+        <p><strong>Mobile:</strong> {{ item.mobile }}</p>
+      </div>
+    </div>
+</div> -->
+
+
+<div class="container">
+    <h3 style="text-align: center;">COVID Vaccination Centers</h3>
+
+    <div class="containe shadow-effect"
+        style="margin-top: 30px;justify-content: center; align-items: center; padding: 40px;background-color: #eeeeee;">
+        <form action="">
+            <div class="filter">
+                <div class="statebar">
+                    <label for="state" style="font-weight: bold; padding-right: 23px;">Select State:</label>
+                    <select style="border: 1px solid black; width: 300px; margin: 3px;" id="state"
+                        [(ngModel)]="selectedState" name="state">
+                        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                    </select>
+                </div>
+                <div class="districtbar">
+                    <label for="district" style="font-weight: bold; padding-right: 23px;padding-left: 90px;">Select
+                        District:</label>
+                    <select style="border: 1px solid black; width: 300px; margin: 3px;" id="district"
+                        [(ngModel)]="selectedDistrict" name="district">
+                        <option *ngFor="let district of districts" [value]="district">{{ district }}</option>
+                    </select>
+                </div>
+
+                <div class="pin">
+                    <label for="pin" style="font-weight: bold; padding-right: 23px;">Select PIN Code:</label>
+                    <select style="border: 1px solid black; width: 300px; margin: 3px;" id="pin"
+                        [(ngModel)]="selectedPin" name="pin">
+                        <option *ngFor="let pin of pins" [value]="pin">{{ pin}}</option>
+                    </select>
+                </div>
+
+                <div class="age">
+                    <label for="age" style="font-weight: bold; padding-right: 23px;">Select Age group:</label>
+                    <select style="border: 1px solid black; width: 300px;margin: 3px;" id="age"
+                        [(ngModel)]="selectedAgeGroup" name="age">
+                        <option *ngFor="let age of ageGroups" [value]="age">{{ age}}</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div class="location">
+            <label for="searchTerm"
+                style="font-weight: bold; padding-right: 23px; margin-left: 389px; margin-top: 19px;">Enter
+                Location:</label>
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Search..."
+                style="border: 1px solid black; width: 300px;">
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="new-container">
+        <div *ngFor="let center of filteredItems" class="center-container shadow-effect">
+            <img [src]="center.imageUrl" alt="{{ center.centername }}" class="center-image">
+            <div class="center-details">
+                <h2>{{ center.centername }}</h2>
+                <div class="items">
+                    <div class="mobile">
+                        <span class="material-symbols-outlined" style="vertical-align: middle;">
+                            call
+                        </span>
+                        <p style="display: inline-block; margin-left: 5px; vertical-align: middle;">
+                            {{center.phonenumber}}
+                        </p>
+                    </div>
+                    <div class="location">
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                        <p style="display: inline-block; margin-left: 5px; vertical-align: middle;">
+                            {{center.centerlocation}}
+                        </p>
+                    </div>
+                    <div class="hours">
+                        <span class="material-symbols-outlined">
+                            history
+                        </span>
+                        <p style="display: inline-block; margin-left: 5px; vertical-align: middle;">
+                            {{center.workinghours}}
+                        </p>
+                    </div>
+                </div>
+                <button class="book-slot-button" (click)="bookSlot(center)">Book Slot</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- schedule.component.html -->
+<div class="new-container">
+    <div class="row">
+        <div *ngFor="let center of locations" class="col">
+            <div class="center-container carde">
+                <div class="center-details">
+                    <h2>{{ center.centername }}</h2>
+                    <div class="items">
+                        <div class="mobile">
+                            <span class="material-symbols-outlined" style="vertical-align: middle;">
+                                call
+                            </span>
+                            <p style="display: inline-block; margin-left: 5px; vertical-align: middle;">
+                                {{center.phonenumber}}
+                            </p>
+                        </div>
+                        <div class="location">
+                            <span class="material-symbols-outlined">
+                                location_on
+                            </span>
+                            <p style="display: inline-block; margin-left: 5px; vertical-align: middle;">
+                                {{center.centerlocation}}
+                            </p>
+                        </div>
+                        <div class="hours">
+                            <span class="material-symbols-outlined">
+                                history
+                            </span>
+                            <p style="display: inline-block; margin-left: 5px; vertical-align: middle;">
+                                {{center.workinghours}}
+                            </p>
+                        </div>
+                    </div>
+                    <button class="book-slot-button" (click)="bookSlot(center)">Book Slot</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+.alert{
+    background-color: #fff;
+    color: rgb(221, 58, 58);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Style the table */
+  table {
+    border: 1px solid black;
+  }
+  
+  /* Style the table headers */
+  th {
+    background-color: #afaeae;
+    padding: 8px;
+  }
+  
+  /* Style the table data */
+  td {
+    padding: 8px;
+  }
+
+   .validation-message {
+    margin: 0 auto;
+    top: 50%;
+    /* padding: 4px; */
+    font-size: 17px;
+    font-weight: bold;
+    transform: translateX(10%);
+  }
+   
+  
+  /* Style the form inputs */
+  input {
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style the form labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Style the form validation messages */
+  .error {
+    color: red;
+    font-size: 12px;
+    
+  }
+
+
+ .submit{
+    padding: 10px;
+    width: 240px;
+    margin-left: 59px;
+    margin-top: 24px;
+}
+
+
+select{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  
+  
+}
+
+.contain{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-left: 130px;
+  justify-content: center !important;
+} 
+
+
+.formlayout{
+  /* width: 100%; */
+  border-radius: 4px;
+  margin-top: 40px;
+  flex: 6;
+}
+
+.phot {
+  flex: 4;
+}
+
+.phot img {
+  max-width: 100%;
+  margin-top: 40px;
+  height: 528px;
+  border: 3px solid #000;
+}
+
+form {
+  /* max-width: 100%; */
+  padding: 40px;
+  border: 2px solid #000;
+  background-color: #d8d5d5;
+}
+
+

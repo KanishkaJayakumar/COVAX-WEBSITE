@@ -1,0 +1,52 @@
+<div class="container col-md-8">
+  <div class="col-md-2"></div>
+  <div class="heading" style="text-align: center;color: black; background-color: #eeeeee;">
+    <h3 style="text-align: center;color: black; background-color: #eeeeee;margin-top: 24px;">Book my Slot</h3>
+    <p>You can book your covid vaccine slots with available centers on specified dates.</p>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<!-- <div class="col-md-1"></div>
+<div class="col-md-10"> -->
+<h4>{{errorMessage}}</h4>
+<div class="container">
+<div>
+  <div class="contain" style="padding: 4px;">
+    <div class="phot">
+      <img src="../../../assets/vaccinebook.webp" />
+    </div>
+    <div class="formlayout">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="name" name="name" required>
+
+        <label for="centername">Center Name:</label>
+        <input type="text" id="centername" [(ngModel)]="centername" name="centername" required>
+
+
+        <!-- booking.component.html -->
+
+        <div>
+          <label for="center">Select Center:</label>
+          <select id="center" [(ngModel)]="selectedCenter">
+            <option *ngFor="let center of AvailableSlots" [value]="center">{{ center }}</option>
+          </select>
+        </div>
+
+
+
+        <label for="centerlocation">Center Location:</label>
+        <input type="text" id="centerlocation" [(ngModel)]="centerlocation" name="centerlocation" required>
+
+        <label for="bookdate">Select a Date:</label>
+        <input type="date" id="bookdate" [(ngModel)]="bookdate" name="bookdate" required>
+
+        <button type="button" (click)="bookSlot()">Book Slot</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="responseMessage">{{ responseMessage }}</div>
+</div>
+<!-- <div class="col-md-1"></div> -->

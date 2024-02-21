@@ -1,0 +1,69 @@
+<div class="admin" style="display: flex;">
+
+    <div class="col-md-10" style="background-color: #eeeeee;">
+        <div class="photo" style="text-align: center;padding-top: 40px; border: 1px solid black;">
+            <h3>Welcome User!</h3>
+            <span class="material-symbols-outlined" style="font-size: 90px;color: #302e2e;">
+                account_circle
+            </span>
+            <div class="add" style="padding-top:4px;align-items: center;background-color: #ccc;">
+                <button class="material-symbols-outlined" style="background-color: #ccc;">add_box</button>
+                <button style="background-color: #ccc;" routerLink="/booking">Book my Slot</button>
+            </div>
+        </div>
+    
+        <h2>My Booked Slots</h2>
+        <div *ngIf="bookedSlots.length > 0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Centre name</th>
+                        <th>Location</th>
+                        <th>Booking Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let slot of bookedSlots">
+                        <td>{{ slot.id }}</td>
+                        <td>{{ slot.name }}</td>
+                        <td>{{ slot.centername }}</td>
+                        <td>{{ slot.centerlocation }}</td>
+                        <td>{{slot.bookdate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf="bookedSlots.length === 0">
+            <p>No booked slots found.</p>
+        </div>
+
+    </div>
+    <div class="col-md-2 fixed" style="background-color: #eeeeee;">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+        <h5>User Dashboard</h5>
+        <hr>
+        <span class="material-symbols-outlined">
+            home
+        </span>
+        <button routerLink="/">Home</button>
+        <hr>
+        <span class="material-symbols-outlined">
+            add_box
+        </span>
+        <button routerLink="/booking">Book my Slot</button>
+        <hr>
+        <span class="material-symbols-outlined">
+            view_list
+        </span>
+        <button routerLink="/user">My Slot Bookings</button>
+        <hr>
+        <span class="material-symbols-outlined">
+            logout
+        </span>
+        <button (click)="logout()">Log Out</button>
+    </div>
+</div>

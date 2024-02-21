@@ -1,0 +1,130 @@
+
+.containe {
+  background-color: #eef0f0;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .logo {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-left: 200px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} */
+ul{
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  font-size: 23px;
+  justify-content: space-between;
+  margin-right: 290px;
+}
+
+ li a {
+  text-decoration: dotted;
+  color: #000;
+  font-weight: bold;
+}
+
+
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Ensure the overlay appears above other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-showup {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 500px;
+  background-color: white;
+  padding: 60px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.login-showup .new-but {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #a9a8a8;
+  color: white;
+  cursor: pointer;
+}
+
+.login-showup .new-but:last-child {
+  margin-bottom: 0;
+}
+
+.login-showup .new-but:hover {
+  background-color: #000;
+}
+
+
+.signup-showup {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 500px;
+  background-color: white;
+  padding: 60px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.signup-showup .new-but {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #a9a8a8;
+  color: white;
+  cursor: pointer;
+}
+
+.signup-showup .new-but:last-child {
+  margin-bottom: 0;
+}
+
+.signup-showup .new-but:hover {
+  background-color: #000;
+}
+
+.close{
+  width: 40px;
+  height: 28px;
+  margin-left: 370px;
+
+}
+
+img{
+  margin-left: 140px;
+  height: 50px;
+  width: 180px;
+}
+
+
+

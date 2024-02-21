@@ -1,0 +1,118 @@
+<div class="container">
+
+  <div class="contactimg">
+    <img class="contactimg"
+      src="https://imgs.search.brave.com/o4_DDiOkWvrMvJFZML4sEHCI75UpipwHhvKi8WxxhNQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by93/b21hbi13b3JraW5n/LWFzLWRvY3Rvcl8y/My0yMTQ4ODI3ODE5/LmpwZz9zaXplPTYy/NiZleHQ9anBn"
+      alt="">
+  </div>
+
+  <div class="contact-form">
+    <h2 style="margin-left: 60px; font-weight: bold;">CONTACT US</h2>
+    <P style="margin-left: 54px;">We answer all your questions and you can report to us any queries at any time.</P>
+    <form (ngSubmit)="submitForm()" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="formData.name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="formData.email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea class="form-control" id="message" [(ngModel)]="formData.message" name="message" rows="4"
+          required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+
+</div>
+
+
+<div class="about-us-container">
+  <h2 style=" margin-top: 24px; font-weight: bold;">About Us</h2>
+  <p style="text-align: center;">Welcome to our <strong> COVAX</strong> COVID vaccination center booking website. Our
+    mission is to provide a
+    convenient and efficient platform for individuals to book their COVID vaccination appointments. Our platform allows
+    users to search for and book appointments at vaccination centers across the country. We partner
+    with a wide network of vaccination centers to ensure that users have access to available appointments in their area.
+  </p>
+ 
+
+  <div class="whole">
+    <div class="connect" style="margin-left: 380px;">
+      <h4>Stay connected with us:</h4>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <hr style="height: 5px;">
+
+
+
+
+  <div class="hole" style="display: flex;flex-direction: row;margin-top: 13px;">
+    <div class="cont">
+      <h3 style="margin-top: 30px;margin-left: 192px;">Who We Are</h3>
+      <p style="margin-top: 29px;text-align: center;">We are a team of passionate individuals committed to making a
+        positive impact in the fight against the COVID-19
+        pandemic. With diverse backgrounds in healthcare, technology, and community service, we have come together to
+        build this platform as our contribution to the global effort <br> to combat the virus.</p>
+      <hr>
+      <h4 style="color: #007bff; text-align: center;">Thanks for visiting! <br> Your feedback means a lot to
+        us!</h4>
+
+    </div>
+    <div class="phot">
+      <img style="margin-top: 53px;"
+        src="https://imgs.search.brave.com/KltLQk6Tufn3vvudUmECyA3FQQVT5XpD6d9oiW_SmG0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/My8xNC8wMy8yMC93/b21hbi0yMTQxODA4/XzY0MC5qcGc"
+        alt="">
+    </div>
+
+  </div>
+
+
+  <p>If you have any questions, feedback, or concerns, please don't hesitate to reach out to us. Your input is valuable
+    to us as we strive to improve our services and provide the best experience for our users.</p>
+
+
+
+  <hr />
+
+  <div class="photo">
+    <img
+      src="https://imgs.search.brave.com/Wfqcw5OeREVkRWr44_FXgP5bsfC6FxaM6LLhq1Fr87A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9ndWxm/YnVzaW5lc3MuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIx/LzAxLzEyNDgyMjE3/Mzc0NDc3NTUyNTkt/MS5qcGc"
+      width="970px" alt="">
+  </div>
+
+  <hr />
+
+  <h2 style="font-weight: bold; margin-top: 44px;">What We Offer</h2>
+  <p style="text-align: center;">On our website, you'll find a comprehensive database of COVID-19 vaccination centers, sorted by location and
+    availability. Whether you're looking for a vaccination center near your home or workplace, our user-friendly
+    interface makes it easy to search, book appointments, and manage your vaccination schedule.</p>
+
+
+
+  <h2 style="font-weight: bold; margin-top: 44px;">Our Vision</h2>
+  <p style="text-align: center;">Our vision is to empower individuals with the knowledge and tools they need to access COVID-19 vaccination centers
+    easily and efficiently. We aim to create a seamless experience for users, enabling them to find nearby vaccination
+    centers, schedule appointments, and stay informed about the latest updates regarding vaccine availability and
+    distribution.</p>
+
+
+
+  <div class="thankyou" style="text-align: center;">
+    <p style="color: rgb(12, 139, 207); font-weight: bold;">Thank you for visiting our website and for your support <br>
+      in our journey towards a COVID-free world!</p>
+  </div>
+
+</div>

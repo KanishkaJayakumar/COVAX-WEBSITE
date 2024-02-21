@@ -1,0 +1,78 @@
+<div class="containe">
+     <div class="logo">
+        <!-- <img src="{{ assests('logo.png') }}" alt="" />  -->
+        <!-- <img [src]="imageUrl" alt="logo"> -->
+        
+     <img src="../../../assets/logo.png" alt="ho"/>
+    </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><i class="fas fa-home"></i><a href="" routerLink="/" style="font-family: 'Roboto', sans-serif;"> Home</a></li>
+                <li><a href="" routerLink="/booking" style="font-family: 'Roboto', sans-serif;"> Booking</a></li>
+                <li><a href="" routerLink="/schedule" style="font-family: 'Roboto', sans-serif;" > Schedule</a></li>
+                <li><a href="" routerLink="/about" style="font-family: 'Roboto',sans-serif;"> Contact</a></li>
+            </ul>
+        </nav>
+        <ng-template #loggedOut>
+            <button style="border-radius: 7px;width: 138px;color: #000; margin-right: 50px;display: flex;">
+
+                <button class="logbut" style="border-radius: 7px;color: #000; border: none;"
+                    (click)="toggleOptions()">Login</button>/
+                <button class="signbut" style="border-radius: 7px;color: #000;border: none;"
+                    (click)="togglesignOptions()">Signup</button>
+
+
+            </button>
+        </ng-template>
+
+        <button *ngIf="isadLoggedIn()" (click)="gotoAdminPage()">Admin</button>
+        <button *ngIf="isLoggedIn()" (click)="gotoBookingPage()">User</button>
+        <div *ngIf="isLoggedIn() || isadLoggedIn(); else loggedOut">
+            <!-- Display logout button when user is logged in -->
+            <button (click)="logout()" *ngIf="isLoggedIn()"
+                style="border-radius: 7px;width: 88px;color: #000; margin-right: 100px;text-align: center;">Logout</button>
+        
+            <!-- Display logout button when admin is logged in -->
+            <button (click)="adlogout()" *ngIf="isadLoggedIn()"
+                style="border-radius: 7px;width: 88px;color: #000; margin-right: 100px;text-align: center;">Admin Logout</button>
+        </div>
+        
+        
+        
+
+
+    </div>
+</div>
+
+
+
+<div>
+    <div class="overlay" *ngIf="showOptions">
+        <div class="login-showup">
+            <button class="close" (click)="closeWindow()" style="border: 1px solid black;"> <span style="color: #000;"
+                    class="material-symbols-outlined">
+                    close
+                </span></button>
+            <h3 style="text-align: center;">LOGIN</h3>
+            <p>Select your appropriate Login button to proceed.</p>
+            <button class="new-but" (click)="adminLogin()" routerLink="/adlogin">Admin Login</button>
+            <button class="new-but" (click)="userLogin()" routerLink="/login">User Login</button>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="overlay" *ngIf="showsignOptions">
+        <div class="signup-showup">
+            <button class="close" (click)="closeWindow()"> <span style="color: #000;" class="material-symbols-outlined">
+                    close
+                </span></button>
+
+            <h3 style="text-align: center;">SIGNUP</h3>
+            <p>Select your appropriate SignUp button to proceed.</p>
+            <button class="new-but" (click)="adminSignUp()" routerLink="/adsignup">Admin SignUp</button>
+            <button class="new-but" (click)="userSignUp()" routerLink="/signup">User SignUp</button>
+        </div>
+    </div>
+</div>

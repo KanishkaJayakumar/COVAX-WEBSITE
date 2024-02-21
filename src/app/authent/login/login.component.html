@@ -1,0 +1,88 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card p-5 shadow-effect text-theme-primary">
+        <div class="card-body">
+          <div class="text-center">
+            <h2 class="new-theme">Login</h2>
+            <p>Sign in to book your slot.</p>
+          </div>
+
+         
+
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <!-- <div class="form-group">
+              <input type="text" class="form-control" placeholder="Name" formControlName="name" required>
+              <div class="alert alert-danger" *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.invalid">
+                <div *ngIf="loginForm.get('name')?.errors?.['required']">Enter your Name</div>
+                <div *ngIf="loginForm.get('name')?.errors?.['name']">Please enter a valid Name</div>
+              </div>
+            </div> -->
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
+              <div *ngIf="emailExistsError" class="alert alert-danger">{{ emailExistsError }}</div> 
+              <div class="alert alert-danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+                <div *ngIf="loginForm.get('email')?.errors?.['required']">Enter your email</div>
+                <div *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</div>
+                
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+              <div class="alert alert-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+                <div *ngIf="loginForm.get('password')?.errors?.['required']">Enter your password</div>
+                <div *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</div>
+              </div>
+            </div>
+            <button class="btn btn-info btn-block btn-success" style="margin: 40px 160px; width: 150px;" [disabled]="loginForm.invalid" >Login</button>
+            <div *ngIf="registrationSuccessMessage" class="alert alert-success">{{registrationSuccessMessage}}</div>
+          </form> 
+          <i class="fas fa-arrow-left"></i>
+          <button type="button" class="btn btn-warning" routerLink="/" style="width: 140px;">Home</button> 
+          
+          
+          <button type="button" class="btn btn-success" routerLink="/booking" (click)="gotoBookingPage()" style="margin-left: 170px;">Go to Booking Page</button>
+          <i class="fas fa-arrow-right"></i>
+
+            
+        </div>
+      </div>
+    </div>
+    <div *ngIf="loginSuccessMessage" class="alert alert-success">
+      {{ loginSuccessMessage }}
+    </div>
+    
+    <div *ngIf="loginError" class="alert alert-danger">
+      {{ loginError }}
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div> 
+
+
+ <!-- In your Angular component template (e.g., signup.component.html) -->
+<!-- <div class="container mt-5">
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" formControlName="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</div> -->

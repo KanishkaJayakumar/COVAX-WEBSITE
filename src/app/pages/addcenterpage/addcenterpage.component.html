@@ -1,0 +1,48 @@
+
+
+<div class="container col-md-8">
+  <div class="col-md-2"></div>
+
+  <div class="heading" style="text-align: center;color: black; background-color: #eeeeee;">
+    <h3 style="text-align: center;color: black; background-color: #eeeeee;margin-top: 24px;">Add New Vaccination Center
+    </h3>
+    <p>You can add your new covid vaccination center here.</p>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<div class="col-md-1"></div>
+
+
+<div class="col-md-1"></div>
+
+<form>
+  <label for="name">Admin Name:</label>
+  <input type="text" id="name" [(ngModel)]="name" name="name" required>
+
+  <label for="centername">Center Name:</label>
+  <input type="text" id="centername" [(ngModel)]="centername" name="centername" required>
+
+  <label for="centerlocation">Center Location:</label>
+  <input type="text" id="centerlocation" [(ngModel)]="centerlocation" name="centerlocation" required>
+
+  <label for="vaccinecount">Enter Vaccine Count Available:</label>
+  <input type="number" id="vaccinecount" [(ngModel)]="vaccinecount" name="vaccinecount" required>
+
+  <label for="phonenumber">Phone Number:</label>
+  <input type="tel" id="phonenumber" [(ngModel)]="phonenumber" name="phonenumber" required>
+
+  <!-- <label for="image">Center Image:</label>
+  <input type="file" id="image" (change)="onFileChange($event)" accept="image/*" required> -->
+
+  <label for="workinghours">Working Hours:</label>
+  <input type="text" id="workinghours" [(ngModel)]="workinghours" name="workinghours" required>
+
+  <!-- <label for="centerimage">Center Image:</label>
+  <input type="file" name="centerimage" id="centerimage" [(ngModel)]="centerimage" name="centerimage" required>-->
+
+  
+  
+  <button type="button" (click)="addcenter()">Add Center</button> 
+</form>
+<div *ngIf="responseMessage">{{ responseMessage }}</div>
+`

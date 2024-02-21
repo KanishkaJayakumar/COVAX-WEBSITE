@@ -1,0 +1,28 @@
+button{
+    border: none;
+    background-color: #eeeeee;
+}
+
+/* src/app/data-table/data-table.component.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+thead {
+    border: 1px solid #828282;
+    text-align: left;
+    padding: 8px;
+}
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  

@@ -1,0 +1,151 @@
+<carousel [interval]="1500">
+    <slide *ngFor="let image of images">
+        <img [src]="image" alt="Slide" loading="lazy"
+            style="max-width: 100%; max-height: 100vh; width: 1600px; height: 550px; object-fit: cover;">
+    </slide>
+</carousel>
+
+<div class="container">
+    <div class="content">
+        <div class="head1" style="padding-top: 60px;">
+            <h2 style="text-align: center; color:brown;">STEPS TO GET VACCINATION EASILY</h2>
+        </div>
+        <div class="boxes">
+            <div class="card box shadow-effect box1">
+                <h5 style="padding: 20px;"><b>Step 1: Book an Appointment</b></h5>
+                <img src="https://www.cowin.gov.in/assets/images/reports-aefi.svg" width="100px" height="150px"
+                    class="card-img-top" alt="">
+
+                <ul>
+                    <li>Fill in the online booking form on our website or call us at +044-2345-6789</li>
+                    <li>Provide your name, age and contact details for further assistance.</li>
+                </ul>
+            </div>
+            <div class="card box shadow-effect box2">
+                <h5 style="padding: 20px;"><b>Step 2: Visit Vacinnation Center</b></h5>
+                <img src="https://imgs.search.brave.com/XuMP4anPhqGxLvPZxbORMdJ152vcmF5g_GHdnsaB6Cs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/c291dGhlcm5oZWFs/dGgubnovc2l0ZXMv/ZGVmYXVsdC9maWxl/cy9zdHlsZXMvc2Nh/bGVfd2lkdGhfZnVs/bF9jb2x1bW4vcHVi/bGljLzIwMjEtMDUv/MWNsaW5pYy5wbmc_/aXRvaz1jWWhHaUQ4/Zw"
+                    width="100px" height="150px" class="card-img-top" alt="">
+
+                <ul>
+                    <li>Fill in the online booking form on our website or call us at +044-2345-6789</li>
+                    <li>Provide your name, age and contact details for further assistance.</li>
+                </ul>
+            </div>
+            <div class="card shadow-effect box box3">
+                <h5 style="padding: 20px;"><b>Step 3: Download your Certificate</b></h5>
+                <img src="https://www.cowin.gov.in/assets/images/Date_Correction.svg" width="100px" height="150px"
+                    class="card-img-top" alt="">
+
+                <ul>
+                    <li>Fill in the online booking form on our website or call us at +044-2345-6789</li>
+                    <li>Provide your name, age and contact details for further assistance.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content2 ">
+        <div class="cont" style="display: block;text-align: center;">
+            <div class="head2" style="padding-top: 60px;">
+                <h3 style="text-align: center; color: brown;">SEARCH YOUR NEAREST VACCINATION CENTER</h3>
+                <p style="text-align: center;">Get a preview list of the nearest centers and check availability of
+                    vaccination slots</p>
+            </div>
+            <div class="but">
+                <button href="" style="color: black; text-align: center;align-items: center;" routerLink="/login">Login to book your
+                    slot</button>
+            </div>
+        </div>
+
+        <div class="slot card shadow-effect" style="margin-top: 30px;justify-content: center; align-items: center; padding: 40px;background-color: #eeeeee;">
+            <form action="">
+                <div class="slot1">
+                    <div class="state">
+                        <label for="district" style="font-weight: bold; padding-right: 23px;">Select State:</label>
+                        <select style="border: 1px solid black; width: 300px;" id="state" [(ngModel)]="selectedState"
+                            name="state">
+                            <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                        </select>
+                    </div>
+                    <div class="district">
+                        <label for="district" style="font-weight: bold; padding-right: 23px;padding-left: 90px;">Select
+                            District:</label>
+                        <select style="border: 1px solid black; width: 300px;" id="district"
+                            [(ngModel)]="selectedDistrict" name="district">
+                            <option *ngFor="let district of districts" [value]="district">{{ district }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="slot2">
+                    <div class="pin" style="margin-top: 30px;">
+                        <label for="pin" style="font-weight: bold; padding-right: 23px;">Select PIN Code:</label>
+                        <select style="border: 1px solid black; width: 300px;" id="pin" [(ngModel)]="selectedPin"
+                            name="pin">
+                            <option *ngFor="let pin of pins" [value]="pin">{{ pin}}</option>
+                        </select>
+
+                    </div>
+                </div>
+            </form>
+            <button
+                style="border: 1px solid #ccc;background-color: #ccc; border-radius: 15px; width: 250px; margin-top: 29px;" routerLink="/booking">Book
+                Your Slot Here</button>
+        </div>
+    </div>
+</div>
+
+<div class="container shadow-effect card update" style="display: flex;flex-direction: row; margin-top: 60px;background-color: #eeeeee;">
+    <div class="updateimg">
+        <img src="https://www.cowin.gov.in/assets/images/Date_Correction.svg" style="padding-left: 160px;" height="500px" width="500px">
+    </div> 
+    <div class="updatetext" style="align-items: center;justify-content: center;text-align: center;padding-top: 150px;padding-left: 40px;">
+        <h3>Vaccination Date Correction</h3>
+        <p>
+            Vaccination Date Correction
+            If the date printed on your vaccination certificate differs from the actual date of vaccine administration, you may raise a request for correction of the same by submitting a valid proof of correct vaccination date.
+            
+            Update Date</p>
+        <button style="background-color: #ccc;width: 330px;" class="shadow-effect">Update Vaccine Date</button>
+    </div>
+</div>
+
+<div class=" shadow-effect card report" style="display: flex;flex-direction: row; margin-top: 60px;background-color: #eeeeee;">
+    <div class="reportimg">
+        <img src="https://www.cowin.gov.in/assets/images/reports-aefi.svg" style="padding-left: 160px;" height="500px" width="500px">
+    </div>
+    <div class="reporttext" style="align-items: center;justify-content: center;text-align: center;padding-top: 150px;padding-left: 40px;">
+        <h3>Report Side Effect</h3>
+        <p>
+            Report Side Effect
+            If you have experienced any side effect after COVID-19 vaccination, it can be reported on Co-WIN using your registered mobile number.</p>
+        <button style="background-color: rgba(219, 18, 18, 0.727);width: 200px;" class="shadow-effect" routerLink="/about">Report Now</button>
+    </div>
+</div>
+
+<div class="container shadow-effect card precaution" style="display: flex;flex-direction: row; margin-top: 60px;">
+    <div class="precautiontext" style="align-items: center;justify-content: center;text-align: center;padding-top: 150px;padding-left: 40px;">
+        <h3>Free COVID Precaution Dose</h3>
+        <p>Now Precaution dose for 18-59 age group free at Government Vaccination Center.</p>
+        <button style="background-color: #ccc;" class="shadow-effect" routerLink="/schedule">Book Your Slot At Government Center </button>
+    </div>
+    <div class="precautionimg">
+        <img src="https://www.cowin.gov.in/assets/images/free_covid_precaution_dose.svg" style="padding-left: 160px;" alt="">
+    </div>
+</div>
+
+
+<div class=" shadow-effect card status" style="display: flex;flex-direction: row; margin-top: 60px;background-color: #eeeeee;">
+    <div class="statusimg">
+        <img src="https://www.cowin.gov.in/assets/images/share_illustration.svg" style="padding-left: 160px;" height="500px" width="500px">
+    </div>
+    <div class="statustext" style="align-items: center;justify-content: center;text-align: center;padding-top: 150px;padding-left: 40px;">
+        <h3>Share Your Vaccination Status</h3>
+        <p>Be a Fighter! If you are fully or partially vaccinated, you can now share your vaccination status in your social circle. Let's encourage our friends and followers in joining India's battle against COVID-19.</p>
+        <button style="background-color: #ccc;width: 330px;" class="shadow-effect">Share your Status</button>
+    </div>
+</div>
+
+
+

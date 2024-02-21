@@ -1,0 +1,90 @@
+.alert{
+    background-color: #fff;
+    color: rgb(221, 58, 58);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Style the table */
+  table {
+    border: 1px solid black;
+  }
+  
+  /* Style the table headers */
+  th {
+    background-color: #afaeae;
+    padding: 8px;
+  }
+  
+  /* Style the table data */
+  td {
+    padding: 8px;
+  }
+
+  form {
+    width: 35%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d8d5d5;
+  }
+
+
+
+   .validation-message {
+    margin: 0 auto;
+    top: 50%;
+    /* padding: 4px; */
+    font-size: 17px;
+    font-weight: bold;
+    transform: translateX(10%);
+  }
+   
+  
+  /* Style the form inputs */
+  input {
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style the form labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Style the form validation messages */
+  .error {
+    color: red;
+    font-size: 12px;
+    
+  }
+
+
+ .submit{
+    padding: 10px;
+    width: 240px;
+    margin-left: 59px;
+    margin-top: 24px;
+}
+
+.status{
+    margin-left: 30px;
+    display: inline-block;
+}
+
+select{
+  
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  
+  
+}

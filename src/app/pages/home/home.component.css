@@ -1,0 +1,40 @@
+.boxes{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 50px;
+    background-color: rgb(255, 255, 255);
+}
+.box{
+    background-color: #eeeeee;
+}
+
+.shadow-effect{
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.1);
+}
+button{
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+button:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+
+
+.slot1{
+    display: flex;
+    flex-direction: row;
+}
+.slot2{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+   
+

@@ -1,0 +1,79 @@
+<div class="admin" style="display: flex;">
+
+    <div class="col-md-2 fixed" style="background-color: #eeeeee;">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+        <h5>Admin Dashboard</h5>
+        <hr>
+        <span class="material-symbols-outlined">
+            home
+        </span>
+        <button routerLink="/">Home</button>
+        <hr>
+        <span class="material-symbols-outlined">
+            add_box
+        </span>
+        <button routerLink="/addcenter">Add Vaccination Center</button>
+        <hr>
+        <span class="material-symbols-outlined">
+            view_list
+        </span>
+        <button routerLink="/schedule">List of Centers</button>
+        <hr>
+        <span class="material-symbols-outlined">
+            logout
+        </span>
+        <button (click)="logout()">Log Out</button>
+
+    </div>
+
+
+
+
+    <div class="col-md-10" style="background-color: #eeeeee;">
+        <div class="photo" style="text-align: center;padding-top: 40px; border: 1px solid black;">
+            <h3>Welcome Admin!</h3>
+            <span class="material-symbols-outlined" style="font-size: 90px;">
+                account_circle
+            </span>
+            <div class="add" style="padding-top:4px;align-items: center;background-color: #ccc;">
+                <button class="material-symbols-outlined" style="background-color: #ccc;">add_box</button>
+                <button style="background-color: #ccc;" routerLink="/addcenter">Add new Center</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Center Name</th>
+                    <th>Center Location</th>
+                    <th>Slots Available</th>
+                    <th>Contact Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let element of availablecenters; let i= index;"
+                    style="text-align: center;align-items: center;justify-content: center;">
+                    <td>{{ element.id }}</td>
+                    <td>{{element.centername}}</td>
+                    <td>{{ element.centerlocation }}</td>
+                    <td>{{ element.vaccinecount }}</td>
+                    <td>{{ element.phonenumber }}</td>
+                    <td><button (click)="editCenter(element)">Edit</button></td>
+            <td><button (click)="deleteCenter(element.id)">Delete</button></td>
+                    <!-- <td>{{element.centerimage}}</td> -->
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+</div>
