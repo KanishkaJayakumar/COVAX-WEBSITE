@@ -1,6 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../../image.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,11 +9,11 @@ import { ImageService } from '../../image.service';
   templateUrl: './addcenterpage.component.html',
   styleUrl: './addcenterpage.component.css'
 })
-export class AddcenterpageComponent {
+export class AddcenterpageComponent implements OnInit {
 
 vaccinecount: any;
 
-name: any;
+adminname: any;
 centername: any;
 centerlocation: any;
 responseMessage: any;
@@ -22,11 +23,23 @@ workinghours : any;
 centerimage: any;
   availablecenters: any[]=[];
 
+  constructor(private http:HttpClient, private imageService : ImageService, private route : ActivatedRoute){}
 
-constructor(private http:HttpClient, private imageService : ImageService){}
+
+ngOnInit(){
+  this.route.queryParams.subscribe(params=>{
+
+    this.centername = params['centername'];
+    this.centerlocation = params['centerlocation'];
+    this.vaccinecount = params['vaccinecount'];
+    this.phonenumber = params['phonenumber'];
+    this.workinghours = params['workinghours']
+  })
+  
+}
 
 addcenter() {
-  const data = {centername: this.centername,centerlocation : this.centerlocation, vaccinecount : this.vaccinecount, phonenumber : this.phonenumber,workinghours : this.workinghours, centerimage : this.centerimage};  
+  const data = {adminname: this.adminname, centername: this.centername,centerlocation : this.centerlocation, vaccinecount : this.vaccinecount, phonenumber : this.phonenumber,workinghours : this.workinghours, centerimage : this.centerimage};  
 
   console.log('Sending data to server:', data);
 
@@ -35,11 +48,12 @@ addcenter() {
     .subscribe(
       () => {
         this.responseMessage = 'Vaccine Center added successfully'
-      // this.centername = '';
-          // this.centerlocation = '';
-          // this.vaccinecount = '';
-          // this.phonenumber = '';
-          // this.workinghours = '';
+        this.adminname = '';
+      this.centername = '';
+          this.centerlocation = '';
+          this.vaccinecount = '';
+          this.phonenumber = '';
+          this.workinghours = '';
       },
       (        error: { error: { message: string; }; }) => this.responseMessage = error.error.message || 'Failed to add center'
     );

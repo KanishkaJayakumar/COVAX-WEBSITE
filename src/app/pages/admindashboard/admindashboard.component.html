@@ -45,11 +45,13 @@
         <table>
             <thead>
                 <tr>
-                    <th>S.No</th>
+                    <th>ADMIN ID</th>
+                    <th>Admin Name </th>
                     <th>Center Name</th>
                     <th>Center Location</th>
                     <th>Slots Available</th>
                     <th>Contact Number</th>
+                    <th>Working Hours</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -58,10 +60,12 @@
                 <tr *ngFor="let element of availablecenters; let i= index;"
                     style="text-align: center;align-items: center;justify-content: center;">
                     <td>{{ element.id }}</td>
+                    <td>{{element.adminname}}</td>
                     <td>{{element.centername}}</td>
                     <td>{{ element.centerlocation }}</td>
                     <td>{{ element.vaccinecount }}</td>
                     <td>{{ element.phonenumber }}</td>
+                    <td>{{element.workinghours}}</td>
                     <td><button (click)="editCenter(element)">Edit</button></td>
             <td><button (click)="deleteCenter(element.id)">Delete</button></td>
                     <!-- <td>{{element.centerimage}}</td> -->

@@ -2,25 +2,27 @@ const express = require('express')
 const router = express.Router()
 require('dotenv').config();
 const connection = require('../connection')
+const app = express();
+app.use(express.json())
 
 
 
 router.post('/addnewcenter', (req, res) => {
-    const { centername, centerlocation, vaccinecount, phonenumber, workinghours, centerimage } = req.body;
+    const { adminname,centername, centerlocation, vaccinecount, phonenumber, workinghours } = req.body;
 
     console.log(req.body);
-    if (!centername || !centerlocation || !vaccinecount || !phonenumber || !workinghours) {
-        return res.status(400).json({ message: "Center name, Location, Mobile number, Working hours, Center Image and Vaccine Slots available are required." })
+    if (!adminname || !centername || !centerlocation || !vaccinecount || !phonenumber || !workinghours) {
+        return res.status(400).json({ message: "Center name, Location, Mobile number, Working hours and Vaccine Slots available are required." })
     }
 
-    connection.query('SELECT * from newcenter where centername=? AND centerlocation=? AND vaccinecount=?', [centername, centerlocation, vaccinecount], (err, results) => {
+    connection.query('SELECT * from newcenter where adminname =? AND centername=? AND centerlocation=?', [adminname, centername, centerlocation], (err, results) => {
         if (err) throw err;
 
         if (results.length > 0) {
             return res.status(409).json({ message: "Center already exists" });
         }
 
-        connection.query('INSERT INTO newcenter (centername,centerlocation,vaccinecount,phonenumber,workinghours,centerimage) VALUES(?,?,?,?,?,?)', [centername, centerlocation, vaccinecount, phonenumber, workinghours, centerimage], (err, results) => {
+        connection.query('INSERT INTO newcenter (adminname, centername,centerlocation,vaccinecount,phonenumber,workinghours) VALUES(?,?,?,?,?,?)', [adminname,centername, centerlocation, vaccinecount, phonenumber, workinghours], (err, results) => {
             if (err) {
                 console.error('error inserting center', err);
                 throw err;
@@ -31,11 +33,11 @@ router.post('/addnewcenter', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    const centerId = req.params.id;
+    const id = req.params.id;
 
     // Perform a DELETE operation in your MySQL database
     const query = 'DELETE FROM newcenter WHERE id = ?';
-    connection.query(query, [centerId], (err, results) => {
+    connection.query(query, [id], (err, results) => {
         if (err) {
             console.error('Error deleting center:', err);
             return res.status(500).json({ message: 'Internal Server Error' });

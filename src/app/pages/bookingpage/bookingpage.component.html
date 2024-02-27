@@ -11,7 +11,7 @@
 <h4>{{errorMessage}}</h4>
 <div class="container">
 <div>
-  <div class="contain" style="padding: 4px;">
+  <div class="contain" style="padding: 6px;">
     <div class="phot">
       <img src="../../../assets/vaccinebook.webp" />
     </div>
@@ -20,18 +20,22 @@
         <label for="name">Name:</label>
         <input type="text" id="name" [(ngModel)]="name" name="name" required>
 
+        <label for="age">Age:</label>
+        <input type="number" id="age" [(ngModel)]="age" name="age" required>
+
         <label for="centername">Center Name:</label>
         <input type="text" id="centername" [(ngModel)]="centername" name="centername" required>
 
+        
 
         <!-- booking.component.html -->
 
-        <div>
+        <!-- <div>
           <label for="center">Select Center:</label>
           <select id="center" [(ngModel)]="selectedCenter">
             <option *ngFor="let center of AvailableSlots" [value]="center">{{ center }}</option>
           </select>
-        </div>
+        </div> -->
 
 
 

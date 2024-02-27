@@ -1,5 +1,3 @@
-
-
 <div class="container col-md-8">
   <div class="col-md-2"></div>
 
@@ -10,39 +8,53 @@
   </div>
   <div class="col-md-2"></div>
 </div>
-<div class="col-md-1"></div>
 
+<div class="container col-md-12">
+  <div>
+    <div class="contain" style="display: flex;">
+      <div class="adminimg col-md-1">
+        <img src="https://imgs.search.brave.com/RBiWSKqpYIUvaLyhSqrzBtdlq_CW3t2gU3I44T9FxwQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2RjLmdvdi9jb3Jv/bmF2aXJ1cy8yMDE5/LW5jb3YvaW1hZ2Vz/L0Nvcm9uYXZpcnVz/LWJhZGdlLTMwMC5w/bmc_Xz0zNDgxOA"
+        width="500px" height="650px" alt="">
+        <!-- <img
+          src="https://imgs.search.brave.com/F0MMGNz9nYqU6c2_bdSGG4QCB4XUU-ZbXH9cRJ_c6yM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM1/OTY4NTU0NS9waG90/by92aXJ1cy12YXJp/YW50LWNvcm9uYXZp/cnVzLXNwaWtlLXBy/b3RlaW4tb21pY3Jv/bi1jb3ZpZC0xOS5q/cGc_Yj0xJnM9MTcw/NjY3YSZ3PTAmaz0y/MCZjPWtMT1REODdr/XzhaMzUzN0pxRFlW/dWNYQVZFSmdVT0xY/emFCNUxjd083dzA9"
+          alt="" width="500px" height="350px"> -->
+      </div>
+      <div class="formlayout col-md-11" style="display: flex;width: 800px;">
+        
+        <form>
+          <label for="adminname">Admin Name:</label>
+          <input type="text" id="adminname" [(ngModel)]="adminname" name="adminname" required>
 
-<div class="col-md-1"></div>
+          <label for="centername">Center Name:</label>
+          <input type="text" id="centername" [(ngModel)]="centername" name="centername" required>
 
-<form>
-  <label for="name">Admin Name:</label>
-  <input type="text" id="name" [(ngModel)]="name" name="name" required>
+          <label for="centerlocation">Center Location:</label>
+          <input type="text" id="centerlocation" [(ngModel)]="centerlocation" name="centerlocation" required>
 
-  <label for="centername">Center Name:</label>
-  <input type="text" id="centername" [(ngModel)]="centername" name="centername" required>
+          <label for="vaccinecount">Enter Vaccine Count Available:</label>
+          <input type="number" id="vaccinecount" [(ngModel)]="vaccinecount" name="vaccinecount" required>
 
-  <label for="centerlocation">Center Location:</label>
-  <input type="text" id="centerlocation" [(ngModel)]="centerlocation" name="centerlocation" required>
+          <label for="phonenumber">Phone Number:</label>
+          <input type="tel" id="phonenumber" [(ngModel)]="phonenumber" name="phonenumber" required>
 
-  <label for="vaccinecount">Enter Vaccine Count Available:</label>
-  <input type="number" id="vaccinecount" [(ngModel)]="vaccinecount" name="vaccinecount" required>
-
-  <label for="phonenumber">Phone Number:</label>
-  <input type="tel" id="phonenumber" [(ngModel)]="phonenumber" name="phonenumber" required>
-
-  <!-- <label for="image">Center Image:</label>
+          <!-- <label for="image">Center Image:</label>
   <input type="file" id="image" (change)="onFileChange($event)" accept="image/*" required> -->
 
-  <label for="workinghours">Working Hours:</label>
-  <input type="text" id="workinghours" [(ngModel)]="workinghours" name="workinghours" required>
+          <label for="workinghours">Working Hours:</label>
+          <input type="text" id="workinghours" [(ngModel)]="workinghours" name="workinghours" required>
 
-  <!-- <label for="centerimage">Center Image:</label>
+          <!-- <label for="centerimage">Center Image:</label>
   <input type="file" name="centerimage" id="centerimage" [(ngModel)]="centerimage" name="centerimage" required>-->
 
-  
-  
-  <button type="button" (click)="addcenter()">Add Center</button> 
-</form>
+
+
+          <button type="button" (click)="addcenter()">Add Center</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
 <div *ngIf="responseMessage">{{ responseMessage }}</div>
 `

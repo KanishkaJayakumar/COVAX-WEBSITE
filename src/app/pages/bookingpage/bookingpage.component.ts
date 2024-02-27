@@ -12,6 +12,7 @@ import { CenterService } from '../../center.service';
 export class BookingpageComponent implements OnInit{
 
   name: string = '';
+  age : string = '';
   centername: string = '';
   centerlocation: string='';
   bookdate : any;
@@ -40,7 +41,7 @@ selectedCenter: any;
 
 
   bookSlot() {
-    const data = { name: this.name, centername: this.centername,centerlocation : this.centerlocation, bookdate : this.bookdate }; 
+    const data = { name: this.name, age: this.age, centername: this.centername,centerlocation : this.centerlocation, bookdate : this.bookdate }; 
 
     console.log('Sending data to server:', data);
 

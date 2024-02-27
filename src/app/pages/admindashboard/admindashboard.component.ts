@@ -11,7 +11,13 @@ import { Route, Router } from '@angular/router';
 export class AdmindashboardComponent {
   availablecenters: any[] = [];
   responseMessage: string='';
-  baseUrl: string = 'https://localhost:8080/newcenter';
+  baseUrl: string = 'http://localhost:8080/newcenter';
+  adminname: string='';
+  centername: any;
+  workinghours: any;
+  phonenumber: any;
+  vaccinecount: any;
+  centerlocation: any;
 
   constructor(private centerService: CenterService, private router : Router, private http : HttpClient) { }
 
@@ -27,34 +33,33 @@ export class AdmindashboardComponent {
 
       }
       );
-
-
   }
 
-  // data = [
-  //   { sno: 1, date: '2022-01-10',username:'user1', place: 'City A', centre: 'Centre 1' },
-  //   { sno: 2, date: '2022-01-15',username:'user2', place: 'City B', centre: 'Centre 2' },
-  //   { sno: 3, date: '2022-01-20',username:'user3', place: 'City C', centre: 'Centre 3' },
-  //   { sno: 4, date: '2022-01-25',username:'user4', place: 'City A', centre: 'Centre 4' },
-  //   // Add more records as needed
-  // ];
   logout(): void {
-    // Clear authentication state
     localStorage.removeItem('loggedIn');
     
-    // Redirect to login page
     this.router.navigate(['/adlogin']);
   }
 
-  editCenter(center: any) {
+  editCenter(element: any) {
     // Navigate to the add center form page with the center details
-    this.router.navigate(['/addcenter'], { state: { center } });
+    this.router.navigate(['/addcenter'], {
+      queryParams : {
+        adminname : element.adminname,
+        centername : element.centername,
+        centerlocation : element.centerlocation,
+        vaccinecount : element.vaccinecount,
+        phonenumber : element.phonenumber,
+        workinghours : element.workinghours
+        
+      }
+     });
 }
 
 // Method to handle deleting a center
-deleteCenter(centerId: number) {
+deleteCenter(id: number) {
   if (confirm('Are you sure you want to delete this center?')) {
-    this.http.delete(`${this.baseUrl}/centers/${centerId}`).subscribe(
+    this.http.delete(`${this.baseUrl}/${id}`).subscribe(
       () => {
         this.responseMessage = 'Vaccine Center deleted successfully';
         // Optionally, you can update your UI or perform any additional actions here.
