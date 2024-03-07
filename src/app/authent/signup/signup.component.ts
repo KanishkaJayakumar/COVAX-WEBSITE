@@ -32,7 +32,7 @@ emailExistsError: string |null=null;
       const { name,email, password } = this.registerForm.value;
       
       // Send registration data to the backend
-      this.http.post('http://localhost:8080/appuser/signup', { name,email, password })
+      this.http.post('https://covax-website.onrender.com/appuser/signup', { name,email, password })
         .subscribe(
           (response: any) => {
             console.log('Registration successful:', response);

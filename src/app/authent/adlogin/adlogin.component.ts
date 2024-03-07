@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AdloginComponent {
   loginForm: FormGroup;
-  apiUrl = 'http://localhost:8080/appadmin/adlogin'; 
+  apiUrl = 'https://covax-website.onrender.com/appadmin/adlogin'; 
   loginError: string | undefined;
   emailExistsError: string | undefined;
 registrationSuccessMessage: any;

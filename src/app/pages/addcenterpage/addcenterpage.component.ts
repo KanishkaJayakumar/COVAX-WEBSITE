@@ -17,7 +17,7 @@ adminname: any;
 centername: any;
 centerlocation: any;
 responseMessage: any;
-private baseUrl = 'http://localhost:8080/newcenter';
+private baseUrl = 'https://covax-website.onrender.com/newcenter';
 phonenumber: any;
 workinghours : any;
 centerimage: any;

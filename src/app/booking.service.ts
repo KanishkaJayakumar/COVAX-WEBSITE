@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BookingService {
-  private baseUrl = 'http://localhost:8080/bookslot'; // Replace with your actual Node.js server URL
+  private baseUrl = 'https://covax-website.onrender.com/bookslot'; // Replace with your actual Node.js server URL
 
   constructor(private http: HttpClient) { }
 

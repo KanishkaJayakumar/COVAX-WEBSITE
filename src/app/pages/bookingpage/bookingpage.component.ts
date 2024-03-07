@@ -22,7 +22,7 @@ export class BookingpageComponent implements OnInit{
   centerName: string='';
 centerLocation: string='';
 
-  private baseUrl = 'http://localhost:8080/bookslot'; // Replace with your actual backend API URL
+  private baseUrl = 'https://covax-website.onrender.com/bookslot'; // Replace with your actual backend API URL
   errorMessage: string='';
 selectedCenter: any;
   AvailableSlots: any[]=[];

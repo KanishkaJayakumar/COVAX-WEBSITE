@@ -11,7 +11,7 @@ import { Route, Router } from '@angular/router';
 export class AdmindashboardComponent {
   availablecenters: any[] = [];
   responseMessage: string='';
-  baseUrl: string = 'http://localhost:8080/newcenter';
+  baseUrl: string = 'https://covax-website.onrender.com/newcenter';
   adminname: string='';
   centername: any;
   workinghours: any;

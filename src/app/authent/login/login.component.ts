@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  apiUrl = 'http://localhost:8080/appuser'; 
+  apiUrl = 'https://covax-website.onrender.com/appuser'; 
   loginError: string | undefined;
   emailExistsError: string | undefined;
 registrationSuccessMessage: any;
