@@ -57,6 +57,7 @@ router.get('/mycenters', (req, res) => {
     connection.query('SELECT * FROM newcenter', (err, results) => {
         if (err) {
             console.error('Error fetching vaccine centers:', err);
+            console.log(err);
             return res.status(500).json({ message: "Internal Server Error" });
         }
         res.status(200).json(results);

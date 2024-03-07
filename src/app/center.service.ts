@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CenterService {
-  private baseUrl = 'http://localhost:8080'; // Update with your backend URL
+  private baseUrl = 'https://covax-website.onrender.com'; // Update with your backend URL
 
   constructor(private http: HttpClient) { }
 
